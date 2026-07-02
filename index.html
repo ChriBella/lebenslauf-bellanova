@@ -1,0 +1,1048 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christian Bellanova — ERP Application Consultant</title>
+<meta name="description" content="Lebenslauf von Christian Bellanova, ERP Application Consultant für Healthcare IT und Business Applications.">
+<meta name="color-scheme" content="light dark">
+<style>
+  :root {
+    color-scheme: light;
+    --teal-deep: #0d9488;
+    --teal: #14b8a6;
+    --turquoise: #2dd4bf;
+    --teal-light: #5eead4;
+    --turquoise-light: #67e8f9;
+    --gold: #eab308;
+    --gold-light: #facc15;
+    --amber-deep: #b45309;
+
+    --slate-50: #f4f7f6;
+    --slate-100: #eef2f1;
+    --slate-200: #dde5e3;
+    --slate-300: #c3d0cd;
+    --slate-400: #93a4a0;
+    --slate-500: #62726e;
+    --slate-600: #47534f;
+    --slate-700: #303a37;
+    --slate-800: #1b2422;
+    --slate-900: #101615;
+    --slate-950: #070a09;
+
+    /* Light mode: warm, gold-forward */
+    --bg: #fbf7ee;
+    --bg-soft: #f5eeda;
+    --surface: rgba(255,255,255,0.78);
+    --surface-solid: #ffffff;
+    --border: rgba(69,44,10,0.1);
+    --text: var(--slate-900);
+    --text-muted: #6b6153;
+    --shadow: 0 1px 2px rgba(69,44,10,0.05), 0 8px 24px -8px rgba(69,44,10,0.1);
+    --shadow-lg: 0 8px 16px -4px rgba(69,44,10,0.1), 0 24px 48px -12px rgba(69,44,10,0.18);
+    --nav-bg: rgba(251,247,238,0.75);
+
+    --accent-1: var(--amber-deep);
+    --accent-2: var(--gold);
+    --accent-3: var(--turquoise);
+    --accent-solid: var(--amber-deep);
+    --accent-tint-a: rgba(180,83,9,0.12);
+    --accent-tint-b: rgba(45,212,191,0.12);
+    --accent-ring: rgba(180,83,9,0.35);
+    --accent-shadow: rgba(180,83,9,0.4);
+    --btn-text: var(--slate-950);
+    --blob-1: var(--gold);
+    --blob-2: var(--turquoise);
+    --blob-3: var(--teal-deep);
+
+    --font-display: "Space Grotesk", "Sora", "Segoe UI Variable", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Inter", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  html.dark {
+    color-scheme: dark;
+    /* Dark mode: cool, teal-forward */
+    --bg: var(--slate-950);
+    --bg-soft: #050706;
+    --surface: rgba(27,36,34,0.55);
+    --surface-solid: var(--slate-900);
+    --border: rgba(238,242,241,0.09);
+    --text: var(--slate-50);
+    --text-muted: var(--slate-400);
+    --shadow: 0 1px 2px rgba(0,0,0,0.35), 0 8px 24px -8px rgba(0,0,0,0.55);
+    --shadow-lg: 0 8px 16px -4px rgba(0,0,0,0.45), 0 24px 48px -12px rgba(0,0,0,0.65);
+    --nav-bg: rgba(7,10,9,0.7);
+
+    --accent-1: var(--teal-deep);
+    --accent-2: var(--teal);
+    --accent-3: var(--turquoise);
+    --accent-solid: var(--turquoise);
+    --accent-tint-a: rgba(13,148,136,0.15);
+    --accent-tint-b: rgba(45,212,191,0.15);
+    --accent-ring: rgba(45,212,191,0.4);
+    --accent-shadow: rgba(20,184,166,0.5);
+    --btn-text: #ffffff;
+    --blob-1: var(--teal-deep);
+    --blob-2: var(--turquoise);
+    --blob-3: var(--gold);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    transition: background 0.35s ease, color 0.35s ease;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3 { font-family: var(--font-display); margin: 0; }
+
+  ::selection { background: var(--accent-3); color: var(--slate-950); }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent-solid);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .container { max-width: 920px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* ---------- Decorative blobs ---------- */
+  .blobs { position: absolute; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+  .blob { position: absolute; border-radius: 999px; filter: blur(70px); opacity: 0.35; will-change: transform; }
+  @media (prefers-reduced-motion: no-preference) {
+    .blob { transition: transform 0.5s cubic-bezier(.2,.6,.3,1); }
+  }
+  html.dark .blob { opacity: 0.22; }
+  .blob-1 { width: 420px; height: 420px; background: var(--blob-1); top: -140px; left: -120px; }
+  .blob-2 { width: 380px; height: 380px; background: var(--blob-2); top: -60px; right: -140px; }
+  .blob-3 { width: 320px; height: 320px; background: var(--blob-3); top: 220px; left: 40%; opacity: 0.14; }
+
+  /* ---------- Nav ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: var(--nav-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .inner {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+  }
+  .navlinks {
+    display: flex;
+    gap: 1.6rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .navlinks a {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    position: relative;
+    padding: 0.3rem 0;
+    transition: color 0.2s ease;
+  }
+  .navlinks a::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -2px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-3));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+  .navlinks a:hover { color: var(--text); }
+  .navlinks a:hover::after { transform: scaleX(1); }
+
+  .theme-toggle {
+    width: 38px; height: 38px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--surface-solid);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, background 0.3s ease;
+    flex-shrink: 0;
+  }
+  .theme-toggle:hover { transform: translateY(-1px) rotate(8deg); }
+  .theme-toggle svg { width: 18px; height: 18px; }
+  .theme-toggle .sun { display: none; color: var(--gold); }
+  .theme-toggle .moon { display: block; color: var(--teal); }
+  html.dark .theme-toggle .sun { display: block; }
+  html.dark .theme-toggle .moon { display: none; }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; padding: 5.5rem 0 4rem; text-align: center; }
+  .avatar-photo {
+    width: clamp(220px, 32vw, 320px);
+    height: clamp(220px, 32vw, 320px);
+    margin: 0 auto 2rem;
+    border-radius: 999px;
+    padding: 6px;
+    background: linear-gradient(135deg, var(--accent-1), var(--gold), var(--accent-3));
+    box-shadow: var(--shadow-lg);
+  }
+  .avatar-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: 50% 18%;
+    display: block;
+    border-radius: 999px;
+    background: var(--surface-solid);
+  }
+  .hero h1 {
+    font-size: clamp(2.1rem, 5vw, 3.1rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  .hero .tagline {
+    margin: 0.9rem auto 0;
+    max-width: 46ch;
+    color: var(--text-muted);
+    font-size: clamp(1.02rem, 1.6vw, 1.18rem);
+  }
+
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+    margin: 2rem 0 2.2rem;
+  }
+  .stat-pill {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    background: var(--surface);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.55rem 1.05rem;
+    box-shadow: var(--shadow);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .stat-pill b {
+    font-family: var(--font-display);
+    color: var(--text);
+    font-size: 1rem;
+  }
+
+  .cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.2s ease, border-color 0.2s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary {
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3));
+    background-size: 160% 100%;
+    background-position: 0% 0%;
+    color: var(--btn-text);
+    box-shadow: 0 8px 20px -6px var(--accent-shadow);
+  }
+  .btn-primary:hover { background-position: 100% 0%; box-shadow: 0 10px 26px -6px var(--accent-shadow); }
+  .btn-ghost {
+    background: var(--surface-solid);
+    border-color: var(--border);
+    color: var(--text);
+  }
+  .btn-ghost:hover { border-color: var(--accent-solid); color: var(--accent-solid); }
+
+  /* ---------- Sections ---------- */
+  section { padding: 4rem 0; position: relative; }
+  .section-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-3));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    margin-bottom: 0.6rem;
+  }
+  .section-head h2 { font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 700; letter-spacing: -0.01em; }
+  .section-head { margin-bottom: 2.2rem; }
+  .section-head p { color: var(--text-muted); margin-top: 0.5rem; max-width: 60ch; }
+
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* Cards */
+  .card {
+    background: var(--surface);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--accent-ring); }
+
+  /* Experience timeline */
+  .timeline { display: flex; flex-direction: column; gap: 1.1rem; }
+  .job {
+    padding: 1.5rem 1.6rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .job.current { border-color: var(--accent-ring); }
+  .job.current::before {
+    content: "";
+    position: absolute; top: 0; left: 0; bottom: 0; width: 4px;
+    background: linear-gradient(180deg, var(--accent-1), var(--accent-3));
+  }
+  .job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.6rem; align-items: baseline; margin-bottom: 0.2rem; }
+  .job-title { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; }
+  .job-when {
+    font-size: 0.76rem; font-weight: 600;
+    color: var(--accent-solid);
+    background: var(--accent-tint-a);
+    padding: 0.22rem 0.65rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .job-org-row { display: flex; align-items: flex-start; gap: 0.65rem; margin: 0.35rem 0 0.9rem; }
+  .company-badge {
+    flex-shrink: 0;
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 30px; height: 30px;
+    padding: 0 0.35rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
+    color: var(--btn-text);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.01em;
+    margin-top: 0.1rem;
+  }
+  .company-logo {
+    flex-shrink: 0;
+    width: 54px; height: 54px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    display: flex; align-items: center; justify-content: center;
+    padding: 7px;
+  }
+  .company-logo img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+  a.company-logo {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  a.company-logo:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-ring);
+  }
+  .job-org { color: var(--text-muted); font-size: 0.88rem; margin: 0; }
+  .company-info { color: var(--text-muted); font-size: 0.82rem; line-height: 1.5; margin: 0.3rem 0 0; opacity: 0.85; max-width: 62ch; }
+  .job ul { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  .job li { font-size: 0.92rem; color: var(--text); opacity: 0.92; line-height: 1.55; }
+  .badge-now {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.32rem;
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    color: var(--slate-950);
+    padding: 0.2rem 0.55rem 0.2rem 0.45rem;
+    border-radius: 999px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+  .badge-now::before {
+    content: "";
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--slate-950);
+    animation: pulse-dot 1.7s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(0.65); }
+  }
+
+  /* Grid cards (education/certs) */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+  .mini-card { padding: 1.3rem 1.4rem; }
+  .mini-card .when { font-size: 0.74rem; font-weight: 700; color: var(--accent-solid); text-transform: uppercase; letter-spacing: 0.06em; }
+  .mini-card .title { font-family: var(--font-display); font-weight: 700; font-size: 0.96rem; margin: 0.4rem 0 0.2rem; }
+  .mini-card .org { font-size: 0.84rem; color: var(--text-muted); }
+
+  /* Skills pills */
+  .pill-cloud { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+  .pill {
+    font-size: 0.85rem;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+    transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  }
+  .pill:hover {
+    border-color: transparent;
+    background: linear-gradient(90deg, var(--accent-tint-a), var(--accent-tint-b));
+    transform: translateY(-2px);
+  }
+
+  /* Languages */
+  .lang-list { display: flex; flex-direction: column; gap: 1.2rem; max-width: 480px; }
+  .lang-row .top { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 0.4rem; }
+  .lang-row .top b { font-family: var(--font-display); }
+  .lang-row .top span.level { color: var(--text-muted); font-size: 0.78rem; }
+  .meter { height: 8px; border-radius: 999px; background: var(--border); overflow: hidden; }
+  .meter i {
+    display: block; height: 100%; border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3));
+    transform-origin: left;
+  }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+
+  /* Contact */
+  .contact-card {
+    padding: 2.6rem 2.2rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--accent-tint-a), var(--accent-tint-b));
+  }
+  .contact-card h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 0.7rem; }
+  .contact-card p { color: var(--text-muted); max-width: 50ch; margin: 0 auto 1.8rem; }
+
+  footer {
+    padding: 2.4rem 0 3rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 720px) {
+    .grid-2, .two-col { grid-template-columns: 1fr; }
+    .navlinks { display: none; }
+    .job-head { flex-direction: column; align-items: flex-start; }
+  }
+
+  /* ---------- Ambient vitals/signal background ---------- */
+  #bgCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    display: block;
+  }
+
+  @media print {
+    #bgCanvas, #scrollProgress { display: none; }
+  }
+
+  /* ---------- Scroll progress ---------- */
+  #scrollProgress {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3));
+    z-index: 60;
+    pointer-events: none;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    #scrollProgress { transition: transform 0.12s linear; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bgCanvas" aria-hidden="true"></canvas>
+<div id="scrollProgress"></div>
+
+<nav>
+  <div class="inner">
+    <span class="brand"><span class="gradient-text">CB</span> · Christian Bellanova</span>
+    <ul class="navlinks">
+      <li><a href="#erfahrung">Erfahrung</a></li>
+      <li><a href="#ausbildung">Ausbildung</a></li>
+      <li><a href="#kompetenzen">Kompetenzen</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Farbschema wechseln">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="blobs"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
+  <div class="container" style="position:relative; z-index:1;">
+    <div class="avatar-photo">
+      <img src="christian-bellanova-v2.jpg" alt="Portrait von Christian Bellanova" loading="eager">
+    </div>
+    <h1>Christian <span class="gradient-text">Bellanova</span></h1>
+    <p class="tagline">ERP Application Consultant für Healthcare IT, Business Applications &amp; digitale Transformation im Schweizer Gesundheitswesen.</p>
+
+    <div class="stat-row">
+      <span class="stat-pill">🕐 <b><span class="count" data-target="7">0</span>+</b>&nbsp;Jahre Erfahrung</span>
+      <span class="stat-pill">🏥 <b>Spitex</b>&nbsp;/ Healthcare IT</span>
+      <span class="stat-pill">🇩🇪🇮🇹 <b>DE / IT</b>&nbsp;Muttersprache</span>
+      <span class="stat-pill">📍 <b>Winterthur</b>&nbsp;CH</span>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:Christian.Bellanova@hotmail.de">✉ Kontakt aufnehmen</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/christian-b-862210204" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <button class="btn btn-ghost" onclick="window.print()">⭳ Als PDF drucken</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section id="profil" class="reveal">
+    <div class="section-head">
+      <span class="section-tag">Profil</span>
+      <h2>Wer ich bin</h2>
+    </div>
+    <div class="card" style="padding: 1.8rem 2rem;">
+      <p style="margin:0; font-size: 1.02rem; line-height: 1.75; color: var(--text);">
+        ERP Application Consultant und Business Application Specialist mit über <strong>7 Jahren Berufserfahrung</strong> im Schweizer Gesundheitswesen, insbesondere in der Spitex-Branche. Nachgewiesene Expertise in der Administration, Schulung, Optimierung und Weiterentwicklung von ERP- und Branchensoftware (<strong>Perigon Health, Abacus Business Software / AbaCare</strong>). Starke Kompetenzen in Requirements Engineering, Business Process Improvement, User Enablement und Stakeholder Management. Aktuell im Studium <strong>Wirtschaftsinformatik HF</strong> — Vertiefung Business Intelligence / Enterprise Management.
+      </p>
+    </div>
+  </section>
+
+  <section id="erfahrung" class="reveal">
+    <div class="section-head">
+      <span class="section-tag">Werdegang</span>
+      <h2>Berufserfahrung</h2>
+    </div>
+    <div class="timeline">
+
+      <article class="card job current">
+        <div class="job-head">
+          <span class="job-title">Application Consultant — Perigon Health ERP<span class="badge-now">aktuell</span></span>
+          <span class="job-when">März 2026 – Juni 2026</span>
+        </div>
+        <div class="job-org-row">
+          <a class="company-logo" href="https://www.provis-spitex.ch/" target="_blank" rel="noopener" aria-label="Zur Website von Provis Spitex AG"><img src="logos/provis-spitex-logo.png" alt="Provis Spitex AG Logo"></a>
+          <div>
+            <p class="job-org">Provis Spitex AG, Rupperswil · Temporäres Projekt</p>
+            <p class="company-info">Ambulante Spitex-Organisation im Kanton Aargau — unterstützt Klientinnen und Klienten mit Pflege, Betreuung und Hauswirtschaft im eigenen Zuhause.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Administration, Weiterentwicklung und Optimierung der ERP-Branchenlösung Perigon Health einschliesslich Prozessanalyse, Funktionsdokumentation und Koordination externer Softwarepartner.</li>
+          <li>Planung, Konzeption und Durchführung von Anwenderschulungen und User-Enablement-Massnahmen für Mitarbeitende im Spitex-Umfeld.</li>
+          <li>Requirements Engineering: Aufnahme, Analyse und Priorisierung von Fachanforderungen sowie Abstimmung mit dem Softwareanbieter.</li>
+          <li>1st- und 2nd-Level Application Support, Fehleranalyse, Datenbereinigung und Qualitätssicherung innerhalb der ERP-Applikationslandschaft.</li>
+          <li>Dokumentation und Stabilisierung von Workflows, Systemkonfigurationen und Abläufen.</li>
+        </ul>
+      </article>
+
+      <article class="card job">
+        <div class="job-head">
+          <span class="job-title">Application Manager — ERP &amp; Healthcare IT</span>
+          <span class="job-when">Nov 2024 – Aug 2025</span>
+        </div>
+        <div class="job-org-row">
+          <a class="company-logo" href="https://www.spitex-zuerichsee.ch/" target="_blank" rel="noopener" aria-label="Zur Website von Spitex Zürichsee"><img src="logos/spitex-zuerichsee-logo.png" alt="Spitex Zürichsee Logo"></a>
+          <div>
+            <p class="job-org">Spitex Zürichsee, Meilen</p>
+            <p class="company-info">Spitex-Organisation für die Region Zürichsee — spitalexterne Pflege, Betreuung und Beratung für Menschen jeden Alters in ihrem Zuhause.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Ganzheitliche Verantwortung für Administration, Betrieb und kontinuierliche Optimierung der ERP-Applikation Perigon Health sowie weiterer Business Applications im Spitex-Umfeld.</li>
+          <li>Stakeholder Management: Koordination mit externen ICT-Partnerfirmen, Softwareanbietern und internen Fachbereichen bei Wartung, Störungsbehebung und Releaseplanung.</li>
+          <li>Identity &amp; Access Management: Verwaltung von Benutzerkonten, Zugriffsrechten und Berechtigungen inkl. Onboarding/Offboarding (Active Directory, KeePass).</li>
+          <li>Mobile Device Management (MDM): Rollout, Konfiguration und Administration via Samsung Knox.</li>
+          <li>Projektleitung: Einführung Microsoft Teams, MFA-Rollout Perigon ERP, Implementierung digitales Flottenmanagement (Arval CareSharing App).</li>
+          <li>Verantwortung für ICT-Inventar, Lifecycle Management, Budgetplanung und Beschaffung.</li>
+        </ul>
+      </article>
+
+      <article class="card job">
+        <div class="job-head">
+          <span class="job-title">Service Desk Specialist — ICT Support</span>
+          <span class="job-when">Sept 2022 – Sept 2024</span>
+        </div>
+        <div class="job-org-row">
+          <a class="company-logo" href="https://www.usz.ch/" target="_blank" rel="noopener" aria-label="Zur Website des Universitätsspitals Zürich"><img src="logos/usz-logo.png" alt="Universitätsspital Zürich Logo"></a>
+          <div>
+            <p class="job-org">Universitätsspital Zürich — Direktion ICT, Stettbach</p>
+            <p class="company-info">Eines der grössten und renommiertesten Universitätsspitäler der Schweiz — Maximalversorgung, Forschung und Lehre in nahezu allen medizinischen Fachbereichen.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Entgegennahme, Erfassung und Klassifizierung von IT-Störungsmeldungen im ITSM-System ServiceNow nach ITIL-Standards (Incident, Problem &amp; Request Management).</li>
+          <li>Voranalyse, Workaround-Lösungen via Fernwartung sowie qualifizierte Weiterleitung an den 2nd-Level-Support.</li>
+          <li>Monatliche Pflege der IT-Service-Ausfälle (Outages) — Steigerung der Systemverfügbarkeit.</li>
+        </ul>
+      </article>
+
+      <article class="card job">
+        <div class="job-head">
+          <span class="job-title">IT Support Engineer / ERP Application Support</span>
+          <span class="job-when">Okt 2021 – Aug 2022</span>
+        </div>
+        <div class="job-org-row">
+          <a class="company-logo" href="https://www.griesser.ch/" target="_blank" rel="noopener" aria-label="Zur Website von Griesser AG"><img src="logos/griesser-logo.svg" alt="Griesser AG Logo"></a>
+          <div>
+            <p class="job-org">Griesser AG, Aadorf (Thurgau)</p>
+            <p class="company-info">Schweizer Hersteller von Sonnenschutz- und Beschattungssystemen (Storen, Rollläden, Lamellenstoren) — europaweit tätig, Hauptsitz in Aadorf (TG).</p>
+          </div>
+        </div>
+        <ul>
+          <li>1st- und 2nd-Level-Support im Windows 10 / Microsoft 365-Umfeld (Remote und vor Ort).</li>
+          <li>ERP-Administration und Prozessberatung im Microsoft Dynamics AX-System: Stammdatenpflege, Benutzerverwaltung und Konfiguration.</li>
+          <li>Server- und Netzwerk-Monitoring via PRTG, Software-Deployment via Microsoft SCCM.</li>
+        </ul>
+      </article>
+
+      <article class="card job">
+        <div class="job-head">
+          <span class="job-title">Application Manager / ERP Consultant — Healthcare</span>
+          <span class="job-when">Apr 2019 – Sept 2021</span>
+        </div>
+        <div class="job-org-row">
+          <a class="company-logo" href="https://web.root.ch/" target="_blank" rel="noopener" aria-label="Zur Website von Root-Service AG"><img src="logos/root-service-logo.svg" alt="Root-Service AG Logo"></a>
+          <div>
+            <p class="job-org">Root-Service AG, Bürglen (Thurgau) — ERP-Softwarepartner Healthcare</p>
+            <p class="company-info">Entwickelt, vertreibt und betreut die Branchensoftware Perigon für Spitex-Organisationen, Alters- und Pflegeheime sowie Sozialdienste in der Schweiz.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Application Support (1st &amp; 2nd Level) auf Deutsch und Italienisch für Perigon-Kundschaft im Gesundheitswesen (Spitex, Altersheime, Sozialdienste) in der gesamten Schweiz.</li>
+          <li>Konzeption, Leitung und Durchführung von Anwenderschulungen in der Deutschschweiz und im Tessin — inkl. Schulungsunterlagen und technischer Dokumentation.</li>
+          <li>SQL-Datenbankanalyse, Applikationsmigrationen, Parametrisierung sowie Einrichtung von Benutzerrechten, Formularen und Vitaldatenerfassung.</li>
+        </ul>
+      </article>
+
+      <article class="card job">
+        <div class="job-head">
+          <span class="job-title">IT Support Specialist</span>
+          <span class="job-when">Apr 2018 – März 2019</span>
+        </div>
+        <div class="job-org-row">
+          <span class="company-badge">NS</span>
+          <div>
+            <p class="job-org">NEPHTA Sources GmbH, Owingen (Deutschland)</p>
+            <p class="company-info">IT-Handels- und Servicepartner mit Fokus auf Hardware-Vertrieb (u. a. Lenovo-Kooperation) sowie telefonischem IT-Support.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Telefonischer IT-Support, technische Beratung und Leitung des Vertriebs Lenovo-Kooperationspartner (CH/D) inkl. Einkauf und Verkauf.</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="ausbildung" class="reveal">
+    <div class="section-head">
+      <span class="section-tag">Bildungsweg</span>
+      <h2>Ausbildung &amp; Zertifikate</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card mini-card">
+        <span class="when">laufend</span>
+        <p class="title">Wirtschaftsinformatik HF</p>
+        <p class="org">NextLevel — Business Intelligence / Enterprise Management</p>
+      </div>
+      <div class="card mini-card">
+        <span class="when">2014 – 2017</span>
+        <p class="title">Kaufmann EFZ</p>
+        <p class="org">Kaufmännische Schule Wessenberg, Konstanz (DE)</p>
+      </div>
+      <div class="card mini-card">
+        <span class="when">2025</span>
+        <p class="title">CPUX-F — Usability &amp; UX Foundation</p>
+        <p class="org">Usability Academy</p>
+      </div>
+      <div class="card mini-card">
+        <span class="when">2025</span>
+        <p class="title">ServiceNow Micro-Certification</p>
+        <p class="org">ServiceNow — Welcome to ServiceNow</p>
+      </div>
+      <div class="card mini-card">
+        <span class="when">2023</span>
+        <p class="title">PC-Techniker Diplom (CompTIA A+)</p>
+        <p class="org">Migros Klubschule</p>
+      </div>
+      <div class="card mini-card">
+        <span class="when">2023</span>
+        <p class="title">Cyber Security Tools Training</p>
+        <p class="org">Swiss Cyber Institute</p>
+      </div>
+      <div class="card mini-card">
+        <span class="when">laufend</span>
+        <p class="title">ServiceNow CSA — Administration Fundamentals</p>
+        <p class="org">ServiceNow</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="kompetenzen" class="reveal">
+    <div class="section-head">
+      <span class="section-tag">Stärken</span>
+      <h2>Kernkompetenzen</h2>
+    </div>
+    <div class="pill-cloud">
+      <span class="pill">ERP Application Management</span>
+      <span class="pill">Requirements Engineering</span>
+      <span class="pill">IT Project Coordination</span>
+      <span class="pill">Perigon Health / AbaCare</span>
+      <span class="pill">Stakeholder Management</span>
+      <span class="pill">ICT Security &amp; Datenschutz</span>
+      <span class="pill">Business Process Improvement</span>
+      <span class="pill">User Enablement &amp; Training</span>
+      <span class="pill">Identity &amp; Access Management</span>
+      <span class="pill">1st &amp; 2nd Level App. Support</span>
+      <span class="pill">Technical Documentation</span>
+      <span class="pill">Mobile Device Management (MDM)</span>
+      <span class="pill">Abacus Business Software</span>
+      <span class="pill">Branchenlösung Spitex</span>
+      <span class="pill">Schulung &amp; Consulting</span>
+    </div>
+  </section>
+
+  <section id="sprachen-tech" class="reveal">
+    <div class="two-col">
+      <div>
+        <div class="section-head">
+          <span class="section-tag">Kommunikation</span>
+          <h2>Sprachen</h2>
+        </div>
+        <div class="lang-list">
+          <div class="lang-row">
+            <div class="top"><b>Deutsch</b><span class="level">Muttersprache · C2</span></div>
+            <div class="meter"><i style="width:100%"></i></div>
+          </div>
+          <div class="lang-row">
+            <div class="top"><b>Italienisch</b><span class="level">Muttersprache · C2</span></div>
+            <div class="meter"><i style="width:100%"></i></div>
+          </div>
+          <div class="lang-row">
+            <div class="top"><b>Englisch</b><span class="level">Fliessend · B2</span></div>
+            <div class="meter"><i style="width:78%"></i></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-head">
+          <span class="section-tag">Toolset</span>
+          <h2>Technologien</h2>
+        </div>
+        <div class="pill-cloud">
+          <span class="pill">Microsoft 365 / Azure AD</span>
+          <span class="pill">ServiceNow (ITSM / CSA)</span>
+          <span class="pill">Samsung Knox (MDM)</span>
+          <span class="pill">SQL / Datenbankanalyse</span>
+          <span class="pill">SCCM / Intune</span>
+          <span class="pill">PRTG Monitoring</span>
+          <span class="pill">Dynamics AX</span>
+          <span class="pill">Windows 10/11</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="reveal">
+    <div class="card contact-card">
+      <span class="section-tag">Nächster Schritt</span>
+      <h2>Lust auf eine Zusammenarbeit?</h2>
+      <p>Offen für Projekte und Festanstellungen im Bereich ERP-Applikationsmanagement und Healthcare IT — melden Sie sich gerne.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:Christian.Bellanova@hotmail.de">✉ E-Mail schreiben</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/christian-b-862210204" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 2026 Christian Bellanova · Winterthur, Schweiz</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('themeToggle');
+    var stored = null;
+    try { stored = localStorage.getItem('cb-theme'); } catch (e) {}
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    apply(theme);
+
+    btn.addEventListener('click', function () {
+      theme = (theme === 'dark') ? 'light' : 'dark';
+      apply(theme);
+      try { localStorage.setItem('cb-theme', theme); } catch (e) {}
+    });
+
+    function apply(t) {
+      root.classList.toggle('dark', t === 'dark');
+    }
+  })();
+
+  (function () {
+    var items = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { items.forEach(function (el) { el.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+  })();
+
+  (function () {
+    var canvas = document.getElementById('bgCanvas');
+    if (!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext('2d');
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var w = 0, h = 0;
+    var GRID = 36;
+
+    function resize() {
+      w = window.innerWidth;
+      h = window.innerHeight;
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function cssVar(name, fallback) {
+      var v = getComputedStyle(document.documentElement).getPropertyValue(name);
+      return v ? v.trim() : fallback;
+    }
+
+    function drawGrid() {
+      ctx.save();
+      ctx.strokeStyle = cssVar('--text', '#000000');
+      ctx.globalAlpha = 0.035;
+      ctx.lineWidth = 1;
+      for (var x = 0; x < w; x += GRID) {
+        ctx.beginPath(); ctx.moveTo(x + 0.5, 0); ctx.lineTo(x + 0.5, h); ctx.stroke();
+      }
+      for (var y = 0; y < h; y += GRID) {
+        ctx.beginPath(); ctx.moveTo(0, y + 0.5); ctx.lineTo(w, y + 0.5); ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    /* A single heartbeat/signal pulse: flat baseline, P-blip, sharp QRS spike, T-wave */
+    function pulseOffset(px, period, amp) {
+      var u = ((px % period) + period) % period / period;
+      if (u < 0.55) return 0;
+      if (u < 0.60) return -amp * 0.22 * Math.sin((u - 0.55) / 0.05 * Math.PI);
+      if (u < 0.66) return 0;
+      if (u < 0.685) return amp * 0.95 * ((u - 0.66) / 0.025);
+      if (u < 0.71) return amp * (1 - (u - 0.685) / 0.025 * 1.55);
+      if (u < 0.73) return -amp * 0.28 * (1 - (u - 0.71) / 0.02);
+      if (u < 0.78) return 0;
+      if (u < 0.87) return amp * 0.32 * Math.sin((u - 0.78) / 0.09 * Math.PI);
+      return 0;
+    }
+
+    var lines = [
+      { yFrac: 0.20, period: 280, amp: 24, speed: 34, phase: 0, alpha: 0.26 },
+      { yFrac: 0.82, period: 340, amp: 18, speed: 24, phase: 150, alpha: 0.18 }
+    ];
+
+    function drawTrace(line) {
+      var y0 = h * line.yFrac;
+      var color = cssVar('--accent-solid', '#14b8a6');
+      ctx.save();
+      ctx.strokeStyle = color;
+      ctx.globalAlpha = line.alpha;
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      var step = 3;
+      var lastX = 0, lastY = y0;
+      for (var x = 0; x <= w; x += step) {
+        var y = y0 - pulseOffset(x - line.phase, line.period, line.amp);
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        lastX = x; lastY = y;
+      }
+      ctx.stroke();
+
+      /* leading pulse dot where the QRS spike currently crosses the right edge zone */
+      var edgeOffset = pulseOffset(w - line.phase, line.period, line.amp);
+      if (Math.abs(edgeOffset) > line.amp * 0.5) {
+        ctx.globalAlpha = Math.min(line.alpha * 2.4, 0.9);
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(lastX, lastY, 3, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    function frame() {
+      ctx.clearRect(0, 0, w, h);
+      drawGrid();
+      lines.forEach(function (line) { drawTrace(line); });
+      if (!reduced) {
+        lines.forEach(function (line) {
+          line.phase += line.speed / 60;
+        });
+        requestAnimationFrame(frame);
+      }
+    }
+    frame();
+  })();
+
+  /* Count-up on the "7+ Jahre Erfahrung" stat */
+  (function () {
+    var el = document.querySelector('.count');
+    if (!el) return;
+    var target = parseInt(el.getAttribute('data-target'), 10) || 0;
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) { el.textContent = target; return; }
+
+    var duration = 900;
+    var start = null;
+    function easeOutQuad(x) { return 1 - (1 - x) * (1 - x); }
+    function step(ts) {
+      if (start === null) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      el.textContent = Math.round(easeOutQuad(p) * target);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    setTimeout(function () { requestAnimationFrame(step); }, 350);
+  })();
+
+  /* Scroll progress bar */
+  (function () {
+    var bar = document.getElementById('scrollProgress');
+    if (!bar) return;
+    var ticking = false;
+    function update() {
+      var doc = document.documentElement;
+      var scrollable = doc.scrollHeight - doc.clientHeight;
+      var progress = scrollable > 0 ? (doc.scrollTop || document.body.scrollTop) / scrollable : 0;
+      bar.style.transform = 'scaleX(' + Math.min(Math.max(progress, 0), 1) + ')';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  /* Cursor parallax on hero blobs (desktop pointer only) */
+  (function () {
+    var hero = document.querySelector('.hero');
+    var blobs = document.querySelectorAll('.blob');
+    if (!hero || !blobs.length) return;
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var fine = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (reduced || !fine) return;
+
+    var depths = [16, -13, 10];
+    hero.addEventListener('mousemove', function (e) {
+      var rect = hero.getBoundingClientRect();
+      var nx = (e.clientX - rect.left) / rect.width - 0.5;
+      var ny = (e.clientY - rect.top) / rect.height - 0.5;
+      blobs.forEach(function (blob, i) {
+        var d = depths[i % depths.length];
+        blob.style.transform = 'translate(' + (nx * d).toFixed(1) + 'px, ' + (ny * d).toFixed(1) + 'px)';
+      });
+    });
+    hero.addEventListener('mouseleave', function () {
+      blobs.forEach(function (blob) { blob.style.transform = 'translate(0,0)'; });
+    });
+  })();
+
+  /* Copy-to-clipboard fallback for mailto links (in case no default mail app is set) */
+  (function () {
+    var links = document.querySelectorAll('a[href^="mailto:"]');
+    if (!links.length) return;
+
+    function copyText(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text).catch(function () { legacyCopy(text); });
+      }
+      legacyCopy(text);
+      return Promise.resolve();
+    }
+    function legacyCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus(); ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    links.forEach(function (link) {
+      var email = link.getAttribute('href').replace('mailto:', '').split('?')[0];
+      var original = link.innerHTML;
+      var resetTimer = null;
+      link.addEventListener('click', function () {
+        copyText(email);
+        clearTimeout(resetTimer);
+        link.innerHTML = '✓ Adresse kopiert';
+        resetTimer = setTimeout(function () { link.innerHTML = original; }, 2400);
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
