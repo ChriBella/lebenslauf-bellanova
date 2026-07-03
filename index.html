@@ -187,6 +187,36 @@
   .navlinks a:hover { color: var(--text); }
   .navlinks a:hover::after { transform: scaleX(1); }
 
+  .nav-controls { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
+
+  .lang-switch {
+    display: flex;
+    gap: 2px;
+    background: var(--surface-solid);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    box-shadow: var(--shadow);
+  }
+  .lang-switch button {
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 0.32rem 0.56rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .lang-switch button.active {
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-3));
+    color: var(--btn-text);
+  }
+  .lang-switch button:hover:not(.active) { color: var(--text); }
+
   .theme-toggle {
     width: 38px; height: 38px;
     border-radius: 999px;
@@ -508,15 +538,22 @@
   <div class="inner">
     <span class="brand"><span class="gradient-text">CB</span> · Christian Bellanova</span>
     <ul class="navlinks">
-      <li><a href="#erfahrung">Erfahrung</a></li>
-      <li><a href="#ausbildung">Ausbildung</a></li>
-      <li><a href="#kompetenzen">Kompetenzen</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="#erfahrung" data-i18n="nav.erfahrung">Erfahrung</a></li>
+      <li><a href="#ausbildung" data-i18n="nav.ausbildung">Ausbildung</a></li>
+      <li><a href="#kompetenzen" data-i18n="nav.kompetenzen">Kompetenzen</a></li>
+      <li><a href="#kontakt" data-i18n="nav.kontakt">Kontakt</a></li>
     </ul>
-    <button class="theme-toggle" id="themeToggle" aria-label="Farbschema wechseln">
-      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
-      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-    </button>
+    <div class="nav-controls">
+      <div class="lang-switch" id="langSwitch" role="group" aria-label="Sprache wählen">
+        <button type="button" data-lang="de">DE</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="it">IT</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" data-i18n-aria="theme.aria" aria-label="Farbschema wechseln">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -527,19 +564,19 @@
       <img src="christian-bellanova-v3.jpg" alt="Portrait von Christian Bellanova" loading="eager">
     </div>
     <h1>Christian <span class="gradient-text">Bellanova</span></h1>
-    <p class="tagline">ERP Application Consultant für Healthcare IT, Business Applications &amp; digitale Transformation im Schweizer Gesundheitswesen.</p>
+    <p class="tagline" data-i18n="hero.tagline">ERP Application Consultant für Healthcare IT, Business Applications &amp; digitale Transformation im Schweizer Gesundheitswesen.</p>
 
     <div class="stat-row">
-      <span class="stat-pill">🕐 <b><span class="count" data-target="7">0</span>+</b>&nbsp;Jahre Erfahrung</span>
+      <span class="stat-pill">🕐 <b><span class="count" data-target="7">0</span>+</b>&nbsp;<span data-i18n="stat.experience">Jahre Erfahrung</span></span>
       <span class="stat-pill">🏥 <b>Spitex</b>&nbsp;/ Healthcare IT</span>
-      <span class="stat-pill">🇩🇪🇮🇹 <b>DE / IT</b>&nbsp;Muttersprache</span>
+      <span class="stat-pill">🇩🇪🇮🇹 <b>DE / IT</b>&nbsp;<span data-i18n="stat.mothertongue">Muttersprache</span></span>
       <span class="stat-pill">📍 <b>Winterthur</b>&nbsp;CH</span>
     </div>
 
     <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:Christian.Bellanova@hotmail.de">✉ Kontakt aufnehmen</a>
+      <a class="btn btn-primary" href="mailto:Christian.Bellanova@hotmail.de" data-i18n="hero.cta.contact">✉ Kontakt aufnehmen</a>
       <a class="btn btn-ghost" href="https://linkedin.com/in/christian-b-862210204" target="_blank" rel="noopener">LinkedIn ↗</a>
-      <button class="btn btn-ghost" onclick="window.print()">⭳ Als PDF drucken</button>
+      <button class="btn btn-ghost" onclick="window.print()" data-i18n="hero.cta.print">⭳ Als PDF drucken</button>
     </div>
   </div>
 </header>
@@ -548,11 +585,11 @@
 
   <section id="profil" class="reveal">
     <div class="section-head">
-      <span class="section-tag">Profil</span>
-      <h2>Wer ich bin</h2>
+      <span class="section-tag" data-i18n="profil.tag">Profil</span>
+      <h2 data-i18n="profil.heading">Wer ich bin</h2>
     </div>
     <div class="card" style="padding: 1.8rem 2rem;">
-      <p style="margin:0; font-size: 1.02rem; line-height: 1.75; color: var(--text);">
+      <p data-i18n-html="profil.text" style="margin:0; font-size: 1.02rem; line-height: 1.75; color: var(--text);">
         ERP Application Consultant und Business Application Specialist mit über <strong>7 Jahren Berufserfahrung</strong> im Schweizer Gesundheitswesen, insbesondere in der Spitex-Branche. Nachgewiesene Expertise in der Administration, Schulung, Optimierung und Weiterentwicklung von ERP- und Branchensoftware (<strong>Perigon Health, Abacus Business Software / AbaCare</strong>). Starke Kompetenzen in Requirements Engineering, Business Process Improvement, User Enablement und Stakeholder Management. Aktuell im Studium <strong>Wirtschaftsinformatik HF</strong> — Vertiefung Business Intelligence / Enterprise Management.
       </p>
     </div>
@@ -560,125 +597,125 @@
 
   <section id="erfahrung" class="reveal">
     <div class="section-head">
-      <span class="section-tag">Werdegang</span>
-      <h2>Berufserfahrung</h2>
+      <span class="section-tag" data-i18n="erfahrung.tag">Werdegang</span>
+      <h2 data-i18n="erfahrung.heading">Berufserfahrung</h2>
     </div>
     <div class="timeline">
 
       <article class="card job current">
         <div class="job-head">
-          <span class="job-title">Application Consultant — Perigon Health ERP<span class="badge-now">aktuell</span></span>
-          <span class="job-when">März 2026 – Juni 2026</span>
+          <span class="job-title">Application Consultant — Perigon Health ERP<span class="badge-now" data-i18n="job.badge.now">aktuell</span></span>
+          <span class="job-when" data-i18n="job1.when">März 2026 – Juni 2026</span>
         </div>
         <div class="job-org-row">
-          <a class="company-logo" href="https://www.provis-spitex.ch/" target="_blank" rel="noopener" aria-label="Zur Website von Provis Spitex AG"><img src="logos/provis-spitex-logo.png" alt="Provis Spitex AG Logo"></a>
+          <a class="company-logo" href="https://www.provis-spitex.ch/" target="_blank" rel="noopener" data-i18n-aria="company1.aria" aria-label="Zur Website von Provis Spitex AG"><img src="logos/provis-spitex-logo.png" alt="Provis Spitex AG Logo"></a>
           <div>
-            <p class="job-org">Provis Spitex AG, Rupperswil · Temporäres Projekt</p>
-            <p class="company-info">Ambulante Spitex-Organisation im Kanton Aargau — unterstützt Klientinnen und Klienten mit Pflege, Betreuung und Hauswirtschaft im eigenen Zuhause.</p>
+            <p class="job-org" data-i18n="job1.orgLine">Provis Spitex AG, Rupperswil · Temporäres Projekt</p>
+            <p class="company-info" data-i18n="job1.info">Ambulante Spitex-Organisation im Kanton Aargau — unterstützt Klientinnen und Klienten mit Pflege, Betreuung und Hauswirtschaft im eigenen Zuhause.</p>
           </div>
         </div>
         <ul>
-          <li>Administration, Weiterentwicklung und Optimierung der ERP-Branchenlösung Perigon Health einschliesslich Prozessanalyse, Funktionsdokumentation und Koordination externer Softwarepartner.</li>
-          <li>Planung, Konzeption und Durchführung von Anwenderschulungen und User-Enablement-Massnahmen für Mitarbeitende im Spitex-Umfeld.</li>
-          <li>Requirements Engineering: Aufnahme, Analyse und Priorisierung von Fachanforderungen sowie Abstimmung mit dem Softwareanbieter.</li>
-          <li>1st- und 2nd-Level Application Support, Fehleranalyse, Datenbereinigung und Qualitätssicherung innerhalb der ERP-Applikationslandschaft.</li>
-          <li>Dokumentation und Stabilisierung von Workflows, Systemkonfigurationen und Abläufen.</li>
+          <li data-i18n="job1.b1">Administration, Weiterentwicklung und Optimierung der ERP-Branchenlösung Perigon Health einschliesslich Prozessanalyse, Funktionsdokumentation und Koordination externer Softwarepartner.</li>
+          <li data-i18n="job1.b2">Planung, Konzeption und Durchführung von Anwenderschulungen und User-Enablement-Massnahmen für Mitarbeitende im Spitex-Umfeld.</li>
+          <li data-i18n="job1.b3">Requirements Engineering: Aufnahme, Analyse und Priorisierung von Fachanforderungen sowie Abstimmung mit dem Softwareanbieter.</li>
+          <li data-i18n="job1.b4">1st- und 2nd-Level Application Support, Fehleranalyse, Datenbereinigung und Qualitätssicherung innerhalb der ERP-Applikationslandschaft.</li>
+          <li data-i18n="job1.b5">Dokumentation und Stabilisierung von Workflows, Systemkonfigurationen und Abläufen.</li>
         </ul>
       </article>
 
       <article class="card job">
         <div class="job-head">
           <span class="job-title">Application Manager — ERP &amp; Healthcare IT</span>
-          <span class="job-when">Nov 2024 – Aug 2025</span>
+          <span class="job-when" data-i18n="job2.when">Nov 2024 – Aug 2025</span>
         </div>
         <div class="job-org-row">
-          <a class="company-logo" href="https://www.spitex-zuerichsee.ch/" target="_blank" rel="noopener" aria-label="Zur Website von Spitex Zürichsee"><img src="logos/spitex-zuerichsee-logo.png" alt="Spitex Zürichsee Logo"></a>
+          <a class="company-logo" href="https://www.spitex-zuerichsee.ch/" target="_blank" rel="noopener" data-i18n-aria="company2.aria" aria-label="Zur Website von Spitex Zürichsee"><img src="logos/spitex-zuerichsee-logo.png" alt="Spitex Zürichsee Logo"></a>
           <div>
             <p class="job-org">Spitex Zürichsee, Meilen</p>
-            <p class="company-info">Spitex-Organisation für die Region Zürichsee — spitalexterne Pflege, Betreuung und Beratung für Menschen jeden Alters in ihrem Zuhause.</p>
+            <p class="company-info" data-i18n="job2.info">Spitex-Organisation für die Region Zürichsee — spitalexterne Pflege, Betreuung und Beratung für Menschen jeden Alters in ihrem Zuhause.</p>
           </div>
         </div>
         <ul>
-          <li>Ganzheitliche Verantwortung für Administration, Betrieb und kontinuierliche Optimierung der ERP-Applikation Perigon Health sowie weiterer Business Applications im Spitex-Umfeld.</li>
-          <li>Stakeholder Management: Koordination mit externen ICT-Partnerfirmen, Softwareanbietern und internen Fachbereichen bei Wartung, Störungsbehebung und Releaseplanung.</li>
-          <li>Identity &amp; Access Management: Verwaltung von Benutzerkonten, Zugriffsrechten und Berechtigungen inkl. Onboarding/Offboarding (Active Directory, KeePass).</li>
-          <li>Mobile Device Management (MDM): Rollout, Konfiguration und Administration via Samsung Knox.</li>
-          <li>Projektleitung: Einführung Microsoft Teams, MFA-Rollout Perigon ERP, Implementierung digitales Flottenmanagement (Arval CareSharing App).</li>
-          <li>Verantwortung für ICT-Inventar, Lifecycle Management, Budgetplanung und Beschaffung.</li>
+          <li data-i18n="job2.b1">Ganzheitliche Verantwortung für Administration, Betrieb und kontinuierliche Optimierung der ERP-Applikation Perigon Health sowie weiterer Business Applications im Spitex-Umfeld.</li>
+          <li data-i18n="job2.b2">Stakeholder Management: Koordination mit externen ICT-Partnerfirmen, Softwareanbietern und internen Fachbereichen bei Wartung, Störungsbehebung und Releaseplanung.</li>
+          <li data-i18n="job2.b3">Identity &amp; Access Management: Verwaltung von Benutzerkonten, Zugriffsrechten und Berechtigungen inkl. Onboarding/Offboarding (Active Directory, KeePass).</li>
+          <li data-i18n="job2.b4">Mobile Device Management (MDM): Rollout, Konfiguration und Administration via Samsung Knox.</li>
+          <li data-i18n="job2.b5">Projektleitung: Einführung Microsoft Teams, MFA-Rollout Perigon ERP, Implementierung digitales Flottenmanagement (Arval CareSharing App).</li>
+          <li data-i18n="job2.b6">Verantwortung für ICT-Inventar, Lifecycle Management, Budgetplanung und Beschaffung.</li>
         </ul>
       </article>
 
       <article class="card job">
         <div class="job-head">
           <span class="job-title">Service Desk Specialist — ICT Support</span>
-          <span class="job-when">Sept 2022 – Sept 2024</span>
+          <span class="job-when" data-i18n="job3.when">Sept 2022 – Sept 2024</span>
         </div>
         <div class="job-org-row">
-          <a class="company-logo" href="https://www.usz.ch/" target="_blank" rel="noopener" aria-label="Zur Website des Universitätsspitals Zürich"><img src="logos/usz-logo.png" alt="Universitätsspital Zürich Logo"></a>
+          <a class="company-logo" href="https://www.usz.ch/" target="_blank" rel="noopener" data-i18n-aria="company3.aria" aria-label="Zur Website des Universitätsspitals Zürich"><img src="logos/usz-logo.png" alt="Universitätsspital Zürich Logo"></a>
           <div>
-            <p class="job-org">Universitätsspital Zürich — Direktion ICT, Stettbach</p>
-            <p class="company-info">Eines der grössten und renommiertesten Universitätsspitäler der Schweiz — Maximalversorgung, Forschung und Lehre in nahezu allen medizinischen Fachbereichen.</p>
+            <p class="job-org" data-i18n="job3.orgLine">Universitätsspital Zürich — Direktion ICT, Stettbach</p>
+            <p class="company-info" data-i18n="job3.info">Eines der grössten und renommiertesten Universitätsspitäler der Schweiz — Maximalversorgung, Forschung und Lehre in nahezu allen medizinischen Fachbereichen.</p>
           </div>
         </div>
         <ul>
-          <li>Entgegennahme, Erfassung und Klassifizierung von IT-Störungsmeldungen im ITSM-System ServiceNow nach ITIL-Standards (Incident, Problem &amp; Request Management).</li>
-          <li>Voranalyse, Workaround-Lösungen via Fernwartung sowie qualifizierte Weiterleitung an den 2nd-Level-Support.</li>
-          <li>Monatliche Pflege der IT-Service-Ausfälle (Outages) — Steigerung der Systemverfügbarkeit.</li>
+          <li data-i18n="job3.b1">Entgegennahme, Erfassung und Klassifizierung von IT-Störungsmeldungen im ITSM-System ServiceNow nach ITIL-Standards (Incident, Problem &amp; Request Management).</li>
+          <li data-i18n="job3.b2">Voranalyse, Workaround-Lösungen via Fernwartung sowie qualifizierte Weiterleitung an den 2nd-Level-Support.</li>
+          <li data-i18n="job3.b3">Monatliche Pflege der IT-Service-Ausfälle (Outages) — Steigerung der Systemverfügbarkeit.</li>
         </ul>
       </article>
 
       <article class="card job">
         <div class="job-head">
           <span class="job-title">IT Support Engineer / ERP Application Support</span>
-          <span class="job-when">Okt 2021 – Aug 2022</span>
+          <span class="job-when" data-i18n="job4.when">Okt 2021 – Aug 2022</span>
         </div>
         <div class="job-org-row">
-          <a class="company-logo" href="https://www.griesser.ch/" target="_blank" rel="noopener" aria-label="Zur Website von Griesser AG"><img src="logos/griesser-logo.svg" alt="Griesser AG Logo"></a>
+          <a class="company-logo" href="https://www.griesser.ch/" target="_blank" rel="noopener" data-i18n-aria="company4.aria" aria-label="Zur Website von Griesser AG"><img src="logos/griesser-logo.svg" alt="Griesser AG Logo"></a>
           <div>
             <p class="job-org">Griesser AG, Aadorf (Thurgau)</p>
-            <p class="company-info">Schweizer Hersteller von Sonnenschutz- und Beschattungssystemen (Storen, Rollläden, Lamellenstoren) — europaweit tätig, Hauptsitz in Aadorf (TG).</p>
+            <p class="company-info" data-i18n="job4.info">Schweizer Hersteller von Sonnenschutz- und Beschattungssystemen (Storen, Rollläden, Lamellenstoren) — europaweit tätig, Hauptsitz in Aadorf (TG).</p>
           </div>
         </div>
         <ul>
-          <li>1st- und 2nd-Level-Support im Windows 10 / Microsoft 365-Umfeld (Remote und vor Ort).</li>
-          <li>ERP-Administration und Prozessberatung im Microsoft Dynamics AX-System: Stammdatenpflege, Benutzerverwaltung und Konfiguration.</li>
-          <li>Server- und Netzwerk-Monitoring via PRTG, Software-Deployment via Microsoft SCCM.</li>
+          <li data-i18n="job4.b1">1st- und 2nd-Level-Support im Windows 10 / Microsoft 365-Umfeld (Remote und vor Ort).</li>
+          <li data-i18n="job4.b2">ERP-Administration und Prozessberatung im Microsoft Dynamics AX-System: Stammdatenpflege, Benutzerverwaltung und Konfiguration.</li>
+          <li data-i18n="job4.b3">Server- und Netzwerk-Monitoring via PRTG, Software-Deployment via Microsoft SCCM.</li>
         </ul>
       </article>
 
       <article class="card job">
         <div class="job-head">
           <span class="job-title">Application Manager / ERP Consultant — Healthcare</span>
-          <span class="job-when">Apr 2019 – Sept 2021</span>
+          <span class="job-when" data-i18n="job5.when">Apr 2019 – Sept 2021</span>
         </div>
         <div class="job-org-row">
-          <a class="company-logo" href="https://web.root.ch/" target="_blank" rel="noopener" aria-label="Zur Website von Root-Service AG"><img src="logos/root-service-logo.svg" alt="Root-Service AG Logo"></a>
+          <a class="company-logo" href="https://web.root.ch/" target="_blank" rel="noopener" data-i18n-aria="company5.aria" aria-label="Zur Website von Root-Service AG"><img src="logos/root-service-logo.svg" alt="Root-Service AG Logo"></a>
           <div>
-            <p class="job-org">Root-Service AG, Bürglen (Thurgau) — ERP-Softwarepartner Healthcare</p>
-            <p class="company-info">Entwickelt, vertreibt und betreut die Branchensoftware Perigon für Spitex-Organisationen, Alters- und Pflegeheime sowie Sozialdienste in der Schweiz.</p>
+            <p class="job-org" data-i18n="job5.orgLine">Root-Service AG, Bürglen (Thurgau) — ERP-Softwarepartner Healthcare</p>
+            <p class="company-info" data-i18n="job5.info">Entwickelt, vertreibt und betreut die Branchensoftware Perigon für Spitex-Organisationen, Alters- und Pflegeheime sowie Sozialdienste in der Schweiz.</p>
           </div>
         </div>
         <ul>
-          <li>Application Support (1st &amp; 2nd Level) auf Deutsch und Italienisch für Perigon-Kundschaft im Gesundheitswesen (Spitex, Altersheime, Sozialdienste) in der gesamten Schweiz.</li>
-          <li>Konzeption, Leitung und Durchführung von Anwenderschulungen in der Deutschschweiz und im Tessin — inkl. Schulungsunterlagen und technischer Dokumentation.</li>
-          <li>SQL-Datenbankanalyse, Applikationsmigrationen, Parametrisierung sowie Einrichtung von Benutzerrechten, Formularen und Vitaldatenerfassung.</li>
+          <li data-i18n="job5.b1">Application Support (1st &amp; 2nd Level) auf Deutsch und Italienisch für Perigon-Kundschaft im Gesundheitswesen (Spitex, Altersheime, Sozialdienste) in der gesamten Schweiz.</li>
+          <li data-i18n="job5.b2">Konzeption, Leitung und Durchführung von Anwenderschulungen in der Deutschschweiz und im Tessin — inkl. Schulungsunterlagen und technischer Dokumentation.</li>
+          <li data-i18n="job5.b3">SQL-Datenbankanalyse, Applikationsmigrationen, Parametrisierung sowie Einrichtung von Benutzerrechten, Formularen und Vitaldatenerfassung.</li>
         </ul>
       </article>
 
       <article class="card job">
         <div class="job-head">
           <span class="job-title">IT Support Specialist</span>
-          <span class="job-when">Apr 2018 – März 2019</span>
+          <span class="job-when" data-i18n="job6.when">Apr 2018 – März 2019</span>
         </div>
         <div class="job-org-row">
           <span class="company-badge">NS</span>
           <div>
-            <p class="job-org">NEPHTA Sources GmbH, Owingen (Deutschland)</p>
-            <p class="company-info">IT-Handels- und Servicepartner mit Fokus auf Hardware-Vertrieb (u. a. Lenovo-Kooperation) sowie telefonischem IT-Support.</p>
+            <p class="job-org" data-i18n="job6.orgLine">NEPHTA Sources GmbH, Owingen (Deutschland)</p>
+            <p class="company-info" data-i18n="job6.info">IT-Handels- und Servicepartner mit Fokus auf Hardware-Vertrieb (u. a. Lenovo-Kooperation) sowie telefonischem IT-Support.</p>
           </div>
         </div>
         <ul>
-          <li>Telefonischer IT-Support, technische Beratung und Leitung des Vertriebs Lenovo-Kooperationspartner (CH/D) inkl. Einkauf und Verkauf.</li>
+          <li data-i18n="job6.b1">Telefonischer IT-Support, technische Beratung und Leitung des Vertriebs Lenovo-Kooperationspartner (CH/D) inkl. Einkauf und Verkauf.</li>
         </ul>
       </article>
 
@@ -687,19 +724,19 @@
 
   <section id="ausbildung" class="reveal">
     <div class="section-head">
-      <span class="section-tag">Bildungsweg</span>
-      <h2>Ausbildung &amp; Zertifikate</h2>
+      <span class="section-tag" data-i18n="ausbildung.tag">Bildungsweg</span>
+      <h2 data-i18n="ausbildung.heading">Ausbildung &amp; Zertifikate</h2>
     </div>
     <div class="grid-2">
       <div class="card mini-card">
-        <span class="when">laufend</span>
+        <span class="when" data-i18n="status.ongoing">laufend</span>
         <p class="title">Wirtschaftsinformatik HF</p>
         <p class="org">NextLevel — Business Intelligence / Enterprise Management</p>
       </div>
       <div class="card mini-card">
         <span class="when">2014 – 2017</span>
         <p class="title">Kaufmann EFZ</p>
-        <p class="org">Kaufmännische Schule Wessenberg, Konstanz (DE)</p>
+        <p class="org" data-i18n="edu2.org">Kaufmännische Schule Wessenberg, Konstanz (DE)</p>
       </div>
       <div class="card mini-card">
         <span class="when">2025</span>
@@ -713,7 +750,7 @@
       </div>
       <div class="card mini-card">
         <span class="when">2023</span>
-        <p class="title">PC-Techniker Diplom (CompTIA A+)</p>
+        <p class="title" data-i18n="cert3.title">PC-Techniker Diplom (CompTIA A+)</p>
         <p class="org">Migros Klubschule</p>
       </div>
       <div class="card mini-card">
@@ -722,7 +759,7 @@
         <p class="org">Swiss Cyber Institute</p>
       </div>
       <div class="card mini-card">
-        <span class="when">laufend</span>
+        <span class="when" data-i18n="status.ongoing">laufend</span>
         <p class="title">ServiceNow CSA — Administration Fundamentals</p>
         <p class="org">ServiceNow</p>
       </div>
@@ -731,8 +768,8 @@
 
   <section id="kompetenzen" class="reveal">
     <div class="section-head">
-      <span class="section-tag">Stärken</span>
-      <h2>Kernkompetenzen</h2>
+      <span class="section-tag" data-i18n="kompetenzen.tag">Stärken</span>
+      <h2 data-i18n="kompetenzen.heading">Kernkompetenzen</h2>
     </div>
     <div class="pill-cloud">
       <span class="pill">ERP Application Management</span>
@@ -740,7 +777,7 @@
       <span class="pill">IT Project Coordination</span>
       <span class="pill">Perigon Health / AbaCare</span>
       <span class="pill">Stakeholder Management</span>
-      <span class="pill">ICT Security &amp; Datenschutz</span>
+      <span class="pill" data-i18n="skill.security">ICT Security &amp; Datenschutz</span>
       <span class="pill">Business Process Improvement</span>
       <span class="pill">User Enablement &amp; Training</span>
       <span class="pill">Identity &amp; Access Management</span>
@@ -748,8 +785,8 @@
       <span class="pill">Technical Documentation</span>
       <span class="pill">Mobile Device Management (MDM)</span>
       <span class="pill">Abacus Business Software</span>
-      <span class="pill">Branchenlösung Spitex</span>
-      <span class="pill">Schulung &amp; Consulting</span>
+      <span class="pill" data-i18n="skill.spitexsolution">Branchenlösung Spitex</span>
+      <span class="pill" data-i18n="skill.training">Schulung &amp; Consulting</span>
     </div>
   </section>
 
@@ -757,20 +794,20 @@
     <div class="two-col">
       <div>
         <div class="section-head">
-          <span class="section-tag">Kommunikation</span>
-          <h2>Sprachen</h2>
+          <span class="section-tag" data-i18n="sprachen.tag">Kommunikation</span>
+          <h2 data-i18n="sprachen.heading">Sprachen</h2>
         </div>
         <div class="lang-list">
           <div class="lang-row">
-            <div class="top"><b>Deutsch</b><span class="level">Muttersprache · C2</span></div>
+            <div class="top"><b data-i18n="lang.de.name">Deutsch</b><span class="level" data-i18n="lang.level.native">Muttersprache · C2</span></div>
             <div class="meter"><i style="width:100%"></i></div>
           </div>
           <div class="lang-row">
-            <div class="top"><b>Italienisch</b><span class="level">Muttersprache · C2</span></div>
+            <div class="top"><b data-i18n="lang.it.name">Italienisch</b><span class="level" data-i18n="lang.level.native">Muttersprache · C2</span></div>
             <div class="meter"><i style="width:100%"></i></div>
           </div>
           <div class="lang-row">
-            <div class="top"><b>Englisch</b><span class="level">Fliessend · B2</span></div>
+            <div class="top"><b data-i18n="lang.en.name">Englisch</b><span class="level" data-i18n="lang.level.fluent">Fliessend · B2</span></div>
             <div class="meter"><i style="width:78%"></i></div>
           </div>
         </div>
@@ -778,13 +815,13 @@
       <div>
         <div class="section-head">
           <span class="section-tag">Toolset</span>
-          <h2>Technologien</h2>
+          <h2 data-i18n="tech.heading">Technologien</h2>
         </div>
         <div class="pill-cloud">
           <span class="pill">Microsoft 365 / Azure AD</span>
           <span class="pill">ServiceNow (ITSM / CSA)</span>
           <span class="pill">Samsung Knox (MDM)</span>
-          <span class="pill">SQL / Datenbankanalyse</span>
+          <span class="pill" data-i18n="tech.sql">SQL / Datenbankanalyse</span>
           <span class="pill">SCCM / Intune</span>
           <span class="pill">PRTG Monitoring</span>
           <span class="pill">Dynamics AX</span>
@@ -796,11 +833,11 @@
 
   <section id="kontakt" class="reveal">
     <div class="card contact-card">
-      <span class="section-tag">Nächster Schritt</span>
-      <h2>Lust auf eine Zusammenarbeit?</h2>
-      <p>Offen für Projekte und Festanstellungen im Bereich ERP-Applikationsmanagement und Healthcare IT — melden Sie sich gerne.</p>
+      <span class="section-tag" data-i18n="kontakt.tag">Nächster Schritt</span>
+      <h2 data-i18n="kontakt.heading">Lust auf eine Zusammenarbeit?</h2>
+      <p data-i18n="kontakt.text">Offen für Projekte und Festanstellungen im Bereich ERP-Applikationsmanagement und Healthcare IT — melden Sie sich gerne.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="mailto:Christian.Bellanova@hotmail.de">✉ E-Mail schreiben</a>
+        <a class="btn btn-primary" href="mailto:Christian.Bellanova@hotmail.de" data-i18n="kontakt.cta.email">✉ E-Mail schreiben</a>
         <a class="btn btn-ghost" href="https://linkedin.com/in/christian-b-862210204" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
     </div>
@@ -829,6 +866,304 @@
     function apply(t) {
       root.classList.toggle('dark', t === 'dark');
     }
+  })();
+
+  var translations = {
+    de: {
+      'nav.erfahrung': 'Erfahrung',
+      'nav.ausbildung': 'Ausbildung',
+      'nav.kompetenzen': 'Kompetenzen',
+      'nav.kontakt': 'Kontakt',
+      'theme.aria': 'Farbschema wechseln',
+      'hero.tagline': 'ERP Application Consultant für Healthcare IT, Business Applications & digitale Transformation im Schweizer Gesundheitswesen.',
+      'stat.experience': 'Jahre Erfahrung',
+      'stat.mothertongue': 'Muttersprache',
+      'hero.cta.contact': '✉ Kontakt aufnehmen',
+      'hero.cta.print': '⭳ Als PDF drucken',
+      'profil.tag': 'Profil',
+      'profil.heading': 'Wer ich bin',
+      'profil.text': 'ERP Application Consultant und Business Application Specialist mit über <strong>7 Jahren Berufserfahrung</strong> im Schweizer Gesundheitswesen, insbesondere in der Spitex-Branche. Nachgewiesene Expertise in der Administration, Schulung, Optimierung und Weiterentwicklung von ERP- und Branchensoftware (<strong>Perigon Health, Abacus Business Software / AbaCare</strong>). Starke Kompetenzen in Requirements Engineering, Business Process Improvement, User Enablement und Stakeholder Management. Aktuell im Studium <strong>Wirtschaftsinformatik HF</strong> — Vertiefung Business Intelligence / Enterprise Management.',
+      'erfahrung.tag': 'Werdegang',
+      'erfahrung.heading': 'Berufserfahrung',
+      'job.badge.now': 'aktuell',
+      'job1.when': 'März 2026 – Juni 2026',
+      'job1.orgLine': 'Provis Spitex AG, Rupperswil · Temporäres Projekt',
+      'job1.info': 'Ambulante Spitex-Organisation im Kanton Aargau — unterstützt Klientinnen und Klienten mit Pflege, Betreuung und Hauswirtschaft im eigenen Zuhause.',
+      'job1.b1': 'Administration, Weiterentwicklung und Optimierung der ERP-Branchenlösung Perigon Health einschliesslich Prozessanalyse, Funktionsdokumentation und Koordination externer Softwarepartner.',
+      'job1.b2': 'Planung, Konzeption und Durchführung von Anwenderschulungen und User-Enablement-Massnahmen für Mitarbeitende im Spitex-Umfeld.',
+      'job1.b3': 'Requirements Engineering: Aufnahme, Analyse und Priorisierung von Fachanforderungen sowie Abstimmung mit dem Softwareanbieter.',
+      'job1.b4': '1st- und 2nd-Level Application Support, Fehleranalyse, Datenbereinigung und Qualitätssicherung innerhalb der ERP-Applikationslandschaft.',
+      'job1.b5': 'Dokumentation und Stabilisierung von Workflows, Systemkonfigurationen und Abläufen.',
+      'job2.when': 'Nov 2024 – Aug 2025',
+      'job2.info': 'Spitex-Organisation für die Region Zürichsee — spitalexterne Pflege, Betreuung und Beratung für Menschen jeden Alters in ihrem Zuhause.',
+      'job2.b1': 'Ganzheitliche Verantwortung für Administration, Betrieb und kontinuierliche Optimierung der ERP-Applikation Perigon Health sowie weiterer Business Applications im Spitex-Umfeld.',
+      'job2.b2': 'Stakeholder Management: Koordination mit externen ICT-Partnerfirmen, Softwareanbietern und internen Fachbereichen bei Wartung, Störungsbehebung und Releaseplanung.',
+      'job2.b3': 'Identity & Access Management: Verwaltung von Benutzerkonten, Zugriffsrechten und Berechtigungen inkl. Onboarding/Offboarding (Active Directory, KeePass).',
+      'job2.b4': 'Mobile Device Management (MDM): Rollout, Konfiguration und Administration via Samsung Knox.',
+      'job2.b5': 'Projektleitung: Einführung Microsoft Teams, MFA-Rollout Perigon ERP, Implementierung digitales Flottenmanagement (Arval CareSharing App).',
+      'job2.b6': 'Verantwortung für ICT-Inventar, Lifecycle Management, Budgetplanung und Beschaffung.',
+      'job3.when': 'Sept 2022 – Sept 2024',
+      'job3.orgLine': 'Universitätsspital Zürich — Direktion ICT, Stettbach',
+      'job3.info': 'Eines der grössten und renommiertesten Universitätsspitäler der Schweiz — Maximalversorgung, Forschung und Lehre in nahezu allen medizinischen Fachbereichen.',
+      'job3.b1': 'Entgegennahme, Erfassung und Klassifizierung von IT-Störungsmeldungen im ITSM-System ServiceNow nach ITIL-Standards (Incident, Problem & Request Management).',
+      'job3.b2': 'Voranalyse, Workaround-Lösungen via Fernwartung sowie qualifizierte Weiterleitung an den 2nd-Level-Support.',
+      'job3.b3': 'Monatliche Pflege der IT-Service-Ausfälle (Outages) — Steigerung der Systemverfügbarkeit.',
+      'job4.when': 'Okt 2021 – Aug 2022',
+      'job4.info': 'Schweizer Hersteller von Sonnenschutz- und Beschattungssystemen (Storen, Rollläden, Lamellenstoren) — europaweit tätig, Hauptsitz in Aadorf (TG).',
+      'job4.b1': '1st- und 2nd-Level-Support im Windows 10 / Microsoft 365-Umfeld (Remote und vor Ort).',
+      'job4.b2': 'ERP-Administration und Prozessberatung im Microsoft Dynamics AX-System: Stammdatenpflege, Benutzerverwaltung und Konfiguration.',
+      'job4.b3': 'Server- und Netzwerk-Monitoring via PRTG, Software-Deployment via Microsoft SCCM.',
+      'job5.when': 'Apr 2019 – Sept 2021',
+      'job5.orgLine': 'Root-Service AG, Bürglen (Thurgau) — ERP-Softwarepartner Healthcare',
+      'job5.info': 'Entwickelt, vertreibt und betreut die Branchensoftware Perigon für Spitex-Organisationen, Alters- und Pflegeheime sowie Sozialdienste in der Schweiz.',
+      'job5.b1': 'Application Support (1st & 2nd Level) auf Deutsch und Italienisch für Perigon-Kundschaft im Gesundheitswesen (Spitex, Altersheime, Sozialdienste) in der gesamten Schweiz.',
+      'job5.b2': 'Konzeption, Leitung und Durchführung von Anwenderschulungen in der Deutschschweiz und im Tessin — inkl. Schulungsunterlagen und technischer Dokumentation.',
+      'job5.b3': 'SQL-Datenbankanalyse, Applikationsmigrationen, Parametrisierung sowie Einrichtung von Benutzerrechten, Formularen und Vitaldatenerfassung.',
+      'job6.when': 'Apr 2018 – März 2019',
+      'job6.orgLine': 'NEPHTA Sources GmbH, Owingen (Deutschland)',
+      'job6.info': 'IT-Handels- und Servicepartner mit Fokus auf Hardware-Vertrieb (u. a. Lenovo-Kooperation) sowie telefonischem IT-Support.',
+      'job6.b1': 'Telefonischer IT-Support, technische Beratung und Leitung des Vertriebs Lenovo-Kooperationspartner (CH/D) inkl. Einkauf und Verkauf.',
+      'ausbildung.tag': 'Bildungsweg',
+      'ausbildung.heading': 'Ausbildung & Zertifikate',
+      'status.ongoing': 'laufend',
+      'edu2.org': 'Kaufmännische Schule Wessenberg, Konstanz (DE)',
+      'cert3.title': 'PC-Techniker Diplom (CompTIA A+)',
+      'kompetenzen.tag': 'Stärken',
+      'kompetenzen.heading': 'Kernkompetenzen',
+      'skill.security': 'ICT Security & Datenschutz',
+      'skill.spitexsolution': 'Branchenlösung Spitex',
+      'skill.training': 'Schulung & Consulting',
+      'sprachen.tag': 'Kommunikation',
+      'sprachen.heading': 'Sprachen',
+      'lang.de.name': 'Deutsch',
+      'lang.it.name': 'Italienisch',
+      'lang.en.name': 'Englisch',
+      'lang.level.native': 'Muttersprache · C2',
+      'lang.level.fluent': 'Fliessend · B2',
+      'tech.heading': 'Technologien',
+      'tech.sql': 'SQL / Datenbankanalyse',
+      'kontakt.tag': 'Nächster Schritt',
+      'kontakt.heading': 'Lust auf eine Zusammenarbeit?',
+      'kontakt.text': 'Offen für Projekte und Festanstellungen im Bereich ERP-Applikationsmanagement und Healthcare IT — melden Sie sich gerne.',
+      'kontakt.cta.email': '✉ E-Mail schreiben',
+      'mailto.copied': '✓ Adresse kopiert',
+      'company1.aria': 'Zur Website von Provis Spitex AG',
+      'company2.aria': 'Zur Website von Spitex Zürichsee',
+      'company3.aria': 'Zur Website des Universitätsspitals Zürich',
+      'company4.aria': 'Zur Website von Griesser AG',
+      'company5.aria': 'Zur Website von Root-Service AG'
+    },
+    en: {
+      'nav.erfahrung': 'Experience',
+      'nav.ausbildung': 'Education',
+      'nav.kompetenzen': 'Skills',
+      'nav.kontakt': 'Contact',
+      'theme.aria': 'Toggle color scheme',
+      'hero.tagline': 'ERP Application Consultant for Healthcare IT, Business Applications & digital transformation in the Swiss healthcare sector.',
+      'stat.experience': 'Years Experience',
+      'stat.mothertongue': 'Native Speaker',
+      'hero.cta.contact': '✉ Get in Touch',
+      'hero.cta.print': '⭳ Save as PDF',
+      'profil.tag': 'Profile',
+      'profil.heading': 'Who I Am',
+      'profil.text': 'ERP Application Consultant and Business Application Specialist with over <strong>7 years of professional experience</strong> in the Swiss healthcare sector, particularly in home care (Spitex). Proven expertise in the administration, training, optimization and further development of ERP and industry software (<strong>Perigon Health, Abacus Business Software / AbaCare</strong>). Strong skills in requirements engineering, business process improvement, user enablement and stakeholder management. Currently studying <strong>Business Information Technology (HF)</strong> — specializing in Business Intelligence / Enterprise Management.',
+      'erfahrung.tag': 'Career Path',
+      'erfahrung.heading': 'Professional Experience',
+      'job.badge.now': 'current',
+      'job1.when': 'March 2026 – June 2026',
+      'job1.orgLine': 'Provis Spitex AG, Rupperswil · Temporary Project',
+      'job1.info': 'Home care (Spitex) organization in the canton of Aargau — supports clients with nursing care, assistance and household help in their own home.',
+      'job1.b1': 'Administration, further development and optimization of the ERP industry solution Perigon Health, including process analysis, functional documentation and coordination of external software partners.',
+      'job1.b2': 'Planning, design and delivery of user training and user-enablement measures for employees in the Spitex environment.',
+      'job1.b3': 'Requirements engineering: gathering, analyzing and prioritizing business requirements, and coordinating with the software vendor.',
+      'job1.b4': '1st and 2nd level application support, error analysis, data cleansing and quality assurance within the ERP application landscape.',
+      'job1.b5': 'Documentation and stabilization of workflows, system configurations and processes.',
+      'job2.when': 'Nov 2024 – Aug 2025',
+      'job2.info': 'Spitex home care organization for the Lake Zurich region — out-of-hospital nursing, care and counseling for people of all ages in their own homes.',
+      'job2.b1': 'Overall responsibility for the administration, operation and continuous optimization of the ERP application Perigon Health as well as other business applications in the Spitex environment.',
+      'job2.b2': 'Stakeholder management: coordination with external ICT partner companies, software vendors and internal departments on maintenance, troubleshooting and release planning.',
+      'job2.b3': 'Identity & access management: administration of user accounts, access rights and permissions incl. onboarding/offboarding (Active Directory, KeePass).',
+      'job2.b4': 'Mobile Device Management (MDM): rollout, configuration and administration via Samsung Knox.',
+      'job2.b5': 'Project management: introduction of Microsoft Teams, MFA rollout for Perigon ERP, implementation of digital fleet management (Arval CareSharing App).',
+      'job2.b6': 'Responsibility for ICT inventory, lifecycle management, budget planning and procurement.',
+      'job3.when': 'Sep 2022 – Sep 2024',
+      'job3.orgLine': 'University Hospital Zurich — ICT Division, Stettbach',
+      'job3.info': 'One of the largest and most renowned university hospitals in Switzerland — top-level care, research and teaching across nearly all medical specialties.',
+      'job3.b1': 'Receiving, logging and classifying IT incident reports in the ITSM system ServiceNow according to ITIL standards (incident, problem & request management).',
+      'job3.b2': 'Initial analysis, workaround solutions via remote support, and qualified escalation to 2nd-level support.',
+      'job3.b3': 'Monthly maintenance of IT service outage records — improving system availability.',
+      'job4.when': 'Oct 2021 – Aug 2022',
+      'job4.info': 'Swiss manufacturer of sun protection and shading systems (awnings, roller shutters, venetian blinds) — active across Europe, headquartered in Aadorf (TG).',
+      'job4.b1': '1st and 2nd level support in the Windows 10 / Microsoft 365 environment (remote and on-site).',
+      'job4.b2': 'ERP administration and process consulting in the Microsoft Dynamics AX system: master data maintenance, user administration and configuration.',
+      'job4.b3': 'Server and network monitoring via PRTG, software deployment via Microsoft SCCM.',
+      'job5.when': 'Apr 2019 – Sep 2021',
+      'job5.orgLine': 'Root-Service AG, Bürglen (Thurgau) — ERP Software Partner for Healthcare',
+      'job5.info': 'Develops, sells and supports the industry software Perigon for Spitex organizations, retirement and nursing homes as well as social services in Switzerland.',
+      'job5.b1': 'Application support (1st & 2nd level) in German and Italian for Perigon customers in the healthcare sector (Spitex, retirement homes, social services) throughout Switzerland.',
+      'job5.b2': 'Design, management and delivery of user training in German-speaking Switzerland and Ticino — including training materials and technical documentation.',
+      'job5.b3': 'SQL database analysis, application migrations, parameterization as well as setup of user permissions, forms and vital signs data capture.',
+      'job6.when': 'Apr 2018 – Mar 2019',
+      'job6.orgLine': 'NEPHTA Sources GmbH, Owingen (Germany)',
+      'job6.info': 'IT trading and service partner focused on hardware sales (incl. Lenovo cooperation) as well as telephone IT support.',
+      'job6.b1': 'Telephone IT support, technical consulting and management of sales for the Lenovo cooperation partnership (CH/D), incl. purchasing and sales.',
+      'ausbildung.tag': 'Education Path',
+      'ausbildung.heading': 'Education & Certificates',
+      'status.ongoing': 'ongoing',
+      'edu2.org': 'Kaufmännische Schule Wessenberg, Konstanz (Germany)',
+      'cert3.title': 'PC Technician Diploma (CompTIA A+)',
+      'kompetenzen.tag': 'Strengths',
+      'kompetenzen.heading': 'Core Competencies',
+      'skill.security': 'ICT Security & Data Protection',
+      'skill.spitexsolution': 'Spitex Industry Solution',
+      'skill.training': 'Training & Consulting',
+      'sprachen.tag': 'Communication',
+      'sprachen.heading': 'Languages',
+      'lang.de.name': 'German',
+      'lang.it.name': 'Italian',
+      'lang.en.name': 'English',
+      'lang.level.native': 'Native · C2',
+      'lang.level.fluent': 'Fluent · B2',
+      'tech.heading': 'Technologies',
+      'tech.sql': 'SQL / Database Analysis',
+      'kontakt.tag': 'Next Step',
+      'kontakt.heading': 'Interested in Working Together?',
+      'kontakt.text': 'Open to projects and permanent positions in ERP application management and Healthcare IT — feel free to get in touch.',
+      'kontakt.cta.email': '✉ Send an Email',
+      'mailto.copied': '✓ Address copied',
+      'company1.aria': 'Visit Provis Spitex AG website',
+      'company2.aria': 'Visit Spitex Zürichsee website',
+      'company3.aria': 'Visit University Hospital Zurich website',
+      'company4.aria': 'Visit Griesser AG website',
+      'company5.aria': 'Visit Root-Service AG website'
+    },
+    it: {
+      'nav.erfahrung': 'Esperienza',
+      'nav.ausbildung': 'Formazione',
+      'nav.kompetenzen': 'Competenze',
+      'nav.kontakt': 'Contatto',
+      'theme.aria': 'Cambia tema colore',
+      'hero.tagline': 'ERP Application Consultant per Healthcare IT, Business Applications e trasformazione digitale nel settore sanitario svizzero.',
+      'stat.experience': 'Anni di Esperienza',
+      'stat.mothertongue': 'Madrelingua',
+      'hero.cta.contact': '✉ Contattami',
+      'hero.cta.print': '⭳ Salva come PDF',
+      'profil.tag': 'Profilo',
+      'profil.heading': 'Chi Sono',
+      'profil.text': 'ERP Application Consultant e Business Application Specialist con oltre <strong>7 anni di esperienza professionale</strong> nel settore sanitario svizzero, in particolare nell\'assistenza domiciliare (Spitex). Comprovata esperienza nell\'amministrazione, formazione, ottimizzazione e sviluppo di software ERP e di settore (<strong>Perigon Health, Abacus Business Software / AbaCare</strong>). Solide competenze in Requirements Engineering, Business Process Improvement, User Enablement e Stakeholder Management. Attualmente in formazione in <strong>Informatica Gestionale HF</strong> — indirizzo Business Intelligence / Enterprise Management.',
+      'erfahrung.tag': 'Percorso Professionale',
+      'erfahrung.heading': 'Esperienza Professionale',
+      'job.badge.now': 'attuale',
+      'job1.when': 'Marzo 2026 – Giugno 2026',
+      'job1.orgLine': 'Provis Spitex AG, Rupperswil · Progetto Temporaneo',
+      'job1.info': 'Organizzazione di assistenza domiciliare (Spitex) nel Canton Argovia — supporta le persone assistite con cure, assistenza e aiuto domestico presso il proprio domicilio.',
+      'job1.b1': 'Amministrazione, sviluppo e ottimizzazione della soluzione ERP di settore Perigon Health, inclusa l\'analisi dei processi, la documentazione funzionale e il coordinamento dei partner software esterni.',
+      'job1.b2': 'Pianificazione, progettazione ed erogazione di corsi di formazione utenti e misure di user enablement per il personale nell\'ambito Spitex.',
+      'job1.b3': 'Requirements Engineering: raccolta, analisi e definizione delle priorità dei requisiti di business, in coordinamento con il fornitore del software.',
+      'job1.b4': 'Application support di 1° e 2° livello, analisi degli errori, pulizia dei dati e assicurazione qualità nel panorama applicativo ERP.',
+      'job1.b5': 'Documentazione e stabilizzazione di flussi di lavoro, configurazioni di sistema e processi.',
+      'job2.when': 'Nov 2024 – Ago 2025',
+      'job2.info': 'Organizzazione Spitex per la regione dello Zürichsee — cure, assistenza e consulenza extraospedaliera per persone di tutte le età presso il proprio domicilio.',
+      'job2.b1': 'Responsabilità complessiva per l\'amministrazione, la gestione operativa e l\'ottimizzazione continua dell\'applicazione ERP Perigon Health e di altre business application nell\'ambito Spitex.',
+      'job2.b2': 'Stakeholder Management: coordinamento con aziende partner ICT esterne, fornitori software e reparti interni per manutenzione, risoluzione guasti e pianificazione dei rilasci.',
+      'job2.b3': 'Identity & Access Management: gestione di account utente, diritti di accesso e autorizzazioni incl. onboarding/offboarding (Active Directory, KeePass).',
+      'job2.b4': 'Mobile Device Management (MDM): rollout, configurazione e amministrazione tramite Samsung Knox.',
+      'job2.b5': 'Project management: introduzione di Microsoft Teams, rollout MFA per Perigon ERP, implementazione della gestione flotta digitale (app Arval CareSharing).',
+      'job2.b6': 'Responsabilità per l\'inventario ICT, il lifecycle management, la pianificazione del budget e gli acquisti.',
+      'job3.when': 'Set 2022 – Set 2024',
+      'job3.orgLine': 'Ospedale Universitario di Zurigo — Direzione ICT, Stettbach',
+      'job3.info': 'Uno dei più grandi e rinomati ospedali universitari della Svizzera — assistenza di livello massimo, ricerca e insegnamento in quasi tutte le discipline mediche.',
+      'job3.b1': 'Ricezione, registrazione e classificazione delle segnalazioni di incidenti IT nel sistema ITSM ServiceNow secondo gli standard ITIL (Incident, Problem & Request Management).',
+      'job3.b2': 'Analisi preliminare, soluzioni di workaround tramite assistenza remota e inoltro qualificato al supporto di 2° livello.',
+      'job3.b3': 'Gestione mensile dei disservizi IT (outage) — miglioramento della disponibilità dei sistemi.',
+      'job4.when': 'Ott 2021 – Ago 2022',
+      'job4.info': 'Produttore svizzero di sistemi di protezione solare e oscuramento (tende da sole, tapparelle, veneziane) — attivo in tutta Europa, sede principale ad Aadorf (TG).',
+      'job4.b1': 'Supporto di 1° e 2° livello in ambiente Windows 10 / Microsoft 365 (da remoto e on-site).',
+      'job4.b2': 'Amministrazione ERP e consulenza di processo nel sistema Microsoft Dynamics AX: gestione anagrafiche, amministrazione utenti e configurazione.',
+      'job4.b3': 'Monitoraggio di server e rete tramite PRTG, deployment software tramite Microsoft SCCM.',
+      'job5.when': 'Apr 2019 – Set 2021',
+      'job5.orgLine': 'Root-Service AG, Bürglen (Turgovia) — Partner Software ERP per il settore sanitario',
+      'job5.info': 'Sviluppa, distribuisce e assiste il software di settore Perigon per organizzazioni Spitex, case per anziani e di cura, nonché servizi sociali in Svizzera.',
+      'job5.b1': 'Application support (1° e 2° livello) in tedesco e italiano per la clientela Perigon nel settore sanitario (Spitex, case per anziani, servizi sociali) in tutta la Svizzera.',
+      'job5.b2': 'Progettazione, gestione ed erogazione di corsi di formazione per utenti nella Svizzera tedesca e in Ticino — inclusa la creazione di materiale didattico e documentazione tecnica.',
+      'job5.b3': 'Analisi di database SQL, migrazioni applicative, parametrizzazione nonché configurazione di diritti utente, moduli e rilevazione dei parametri vitali.',
+      'job6.when': 'Apr 2018 – Mar 2019',
+      'job6.orgLine': 'NEPHTA Sources GmbH, Owingen (Germania)',
+      'job6.info': 'Partner IT per commercio e assistenza, focalizzato sulla vendita di hardware (tra cui cooperazione con Lenovo) e sul supporto IT telefonico.',
+      'job6.b1': 'Supporto IT telefonico, consulenza tecnica e gestione delle vendite per la partnership di cooperazione Lenovo (CH/D), incl. acquisti e vendite.',
+      'ausbildung.tag': 'Percorso Formativo',
+      'ausbildung.heading': 'Formazione e Certificazioni',
+      'status.ongoing': 'in corso',
+      'edu2.org': 'Kaufmännische Schule Wessenberg, Costanza (Germania)',
+      'cert3.title': 'Diploma Tecnico PC (CompTIA A+)',
+      'kompetenzen.tag': 'Punti di Forza',
+      'kompetenzen.heading': 'Competenze Chiave',
+      'skill.security': 'ICT Security e Protezione Dati',
+      'skill.spitexsolution': 'Soluzione di Settore Spitex',
+      'skill.training': 'Formazione e Consulenza',
+      'sprachen.tag': 'Comunicazione',
+      'sprachen.heading': 'Lingue',
+      'lang.de.name': 'Tedesco',
+      'lang.it.name': 'Italiano',
+      'lang.en.name': 'Inglese',
+      'lang.level.native': 'Madrelingua · C2',
+      'lang.level.fluent': 'Fluente · B2',
+      'tech.heading': 'Tecnologie',
+      'tech.sql': 'SQL / Analisi Database',
+      'kontakt.tag': 'Prossimo Passo',
+      'kontakt.heading': 'Interessato a Collaborare?',
+      'kontakt.text': 'Aperto a progetti e posizioni fisse nell\'ambito dell\'ERP Application Management e Healthcare IT — non esitate a contattarmi.',
+      'kontakt.cta.email': '✉ Scrivi un\'e-mail',
+      'mailto.copied': '✓ Indirizzo copiato',
+      'company1.aria': 'Vai al sito di Provis Spitex AG',
+      'company2.aria': 'Vai al sito di Spitex Zürichsee',
+      'company3.aria': "Vai al sito dell'Ospedale Universitario di Zurigo",
+      'company4.aria': 'Vai al sito di Griesser AG',
+      'company5.aria': 'Vai al sito di Root-Service AG'
+    }
+  };
+
+  var currentLang = 'de';
+
+  function applyLanguage(lang) {
+    if (!translations[lang]) lang = 'de';
+    currentLang = lang;
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (translations[lang][key] !== undefined) el.textContent = translations[lang][key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-html');
+      if (translations[lang][key] !== undefined) el.innerHTML = translations[lang][key];
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-aria');
+      if (translations[lang][key] !== undefined) el.setAttribute('aria-label', translations[lang][key]);
+    });
+
+    document.querySelectorAll('#langSwitch button').forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+  }
+
+  (function () {
+    var switcher = document.getElementById('langSwitch');
+    if (!switcher) return;
+    var stored = null;
+    try { stored = localStorage.getItem('cb-lang'); } catch (e) {}
+    var browserLang = (navigator.language || 'de').slice(0, 2);
+    var initial = stored || (translations[browserLang] ? browserLang : 'de');
+    applyLanguage(initial);
+
+    switcher.querySelectorAll('button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var lang = b.getAttribute('data-lang');
+        applyLanguage(lang);
+        try { localStorage.setItem('cb-lang', lang); } catch (e) {}
+      });
+    });
   })();
 
   (function () {
@@ -1037,7 +1372,7 @@
       link.addEventListener('click', function () {
         copyText(email);
         clearTimeout(resetTimer);
-        link.innerHTML = '✓ Adresse kopiert';
+        link.innerHTML = (translations[currentLang] && translations[currentLang]['mailto.copied']) || '✓ Adresse kopiert';
         resetTimer = setTimeout(function () { link.innerHTML = original; }, 2400);
       });
     });
